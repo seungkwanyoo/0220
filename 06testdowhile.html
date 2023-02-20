@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06testdowhile.html</title>
+<style>
+    * {
+        font-size: 16pt;
+    }
+</style>
+<script>
+    function mygugudan() {
+        var dan=7,b=0;
+        document.write(dan,'구구단출력 while반복문예제<br>')
+        while(b<9) {
+            b=b+1;//b=1일때 19번처리, b=2일때 19번처리~~b=9일때 19번처리
+            document.write(dan+'*'+b+'='+dan*b+'<br>');
+        }    
+    }
+    var k=0, gg=8;
+    function mygame() {
+        document.write('dowhile반복문 선처리 후조건<br>');
+        do{
+            k=k+1;
+            document.write(gg,'*',k,'=',(k*gg),'<br>');
+        }while(k<10)
+    }
+</script>
+</head>
+<body>
+    <h2>06testdowhile.html</h2>
+    <button onclick="mygugudan()">while구구단출력(mygugudan함수)</button>
+    <button onclick="mygame()">do~while구구단출력(mygame()함수)</button>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08testgugudan.html</title>
+    <style>
+        button {
+            background-color: rgb(106, 106, 233);
+            color: aliceblue;
+            padding: 7px;
+            font-size: 16pt;
+            border-radius: 10px;
+        }
+        * {
+            font-size: 20pt;
+        }
+    </style>
+<script>
+        function mynumber() {
+            var su=0, result='';
+            for(var cnt=1; cnt<=5; cnt++) {
+                su++
+                // document.write(su,' ');
+                result+=su+' '
+                
+            }
+            document.getElementById('display').innerHTML=result;
+        }
+
+</script>
+</head>
+<body>
+    <h2>08testgugudan.html</h2>
+    <button onclick="mynumber()">1~5숫자출력</button> <br>
+    <img src="./images/a2.png" width="500" height="100">
+    <div id="display"></div>
+</body>
+</html>

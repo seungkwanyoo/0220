@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10teststar.html</title>
+    <style>
+        button {
+            background-color: rgb(106, 106, 233);
+            color: aliceblue;
+            padding: 7px;
+            font-size: 16pt;
+            border-radius: 10px;
+        }
+        * {
+            font-size: 20pt;
+        }
+    </style>
+<script>
+        function mynumber() {
+            var su=0, result='';
+            for(var cnt=1; cnt<=5; cnt++) {
+                su++
+                // document.write(su,' ');
+                result+=su+' '
+                
+            }
+            document.getElementById('display').innerHTML=result;
+        }
+
+        function mystar() {
+            for(var a=0; a<6; a=a+1) {
+                for(var b=0; b<6; b=b+1) {
+                    document.write('⭐ ')
+                    
+                }
+                document.write('<br>')
+            }
+        }
+</script>
+</head>
+<body>
+    <h2>10teststar.html</h2>
+    <button onclick="mynumber()">1~5숫자출력</button> <br>
+    <button onclick="mystar()">별출력</button> <br>
+    <img src="./images/a2.png" width="500" height="100">
+    <div id="display"></div>
+</body>
+</html>

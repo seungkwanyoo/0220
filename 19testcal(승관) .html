@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19testcal(승관).html</title>
+    <style>
+        .member {
+            display: flex;
+            text-align: center;
+        }
+        .a1 {
+            margin-right: 5px;
+        }
+        .btn {
+            padding: 10px 22px;
+            margin: 5px 0;
+            background-color: rgb(117, 117, 113);
+            border: 0;
+            color: white;
+        }
+        .a1 select {
+            height: 22px;
+        }
+        h3 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .cen {
+            border: 2px solid gray;
+            border-radius: 20px;
+            width: 800px;
+            margin: 60px auto;
+        }
+        .fo {
+            padding: 40px;
+        }
+    </style>
+    <script>
+        function mypass() {
+            var soju=0, su1=0, su2=0, food=0,
+                price1=0, price2=0, msg='',
+                sultotal='', foodtotal='',cash=0;
+
+            soju=document.myform.a1.value;
+            su1=document.myform.b1.value;
+            food=document.myform.a2.value;
+            su2=document.myform.b2.value;
+            cash=document.myform.c1.value;
+
+            if(soju=='콜라') {
+                price1=5000
+            }else if(soju=='소주') {
+                price1=3000
+            }else {
+                price1=2000
+            }
+            sultotal=price1*su1;
+            //switch(조건){ case 값: 처리; break; ~ default:처리;}
+
+            if(food=='제육볶음') {
+                price2=8000
+            }else if(food=='두부김치') {
+                price2=10000
+            }else if(food=='골뱅무침') {
+                price2=7000
+            }else {
+                price2=5000
+            }
+            foodtotal=price2*su2;
+
+            totalprice=sultotal+foodtotal;
+
+            if(cash=='카드') {price3=totalprice+'원'+'💳'}
+            else if(cash=='현금'){price3=totalprice*0.9+'원'+'💵'+'(할인금액: -'+totalprice*0.1+'원)'}
+            else{}
+
+            // msg='주류:'+soju+'          수량:'+su1+
+            // '      합계:'+sultotal+'\n'+'안주:'+food+
+            // '      수량:'+su2+'      합계:'+foodtotal+
+            // '\n'+'\n'+'총합계:'+(sultotal+foodtotal)+'원';
+            msg='주류:'+soju+'\t\t수량:'+su1+'\t\t합계:'+sultotal+'\n';
+            msg+='안주:'+food+'\t\t수량:'+su2+'\t\t합계:'+foodtotal;
+            document.getElementById('area').innerHTML=msg;
+            msg+='\n'+'\n'+'총합계:'+(price3);
+            document.getElementById('vv').innerHTML='내셔야할 금액: '+price3;
+            // document.myform.area.value= msg;
+            
+        }
+    </script>
+</head>
+<body>
+    <h3><font size="6pt" color="green">[주문표]</font></h3>
+<div class="cen">
+    <form name="myform" class="fo">
+<div class="member">
+    <div class="a1">
+    술종류 <br>
+        <select name="a1" id="">
+        <option value="콜라">콜라(5000원)</option>
+        <option value="소주">소주(3000원)</option>
+        <option value="맥주">맥주(2000원)</option>
+    </select>
+    </div>
+    
+    <div class="a1">
+    갯수<br>
+    <input type="number" name="b1">
+    </div>
+    <div class="a1">
+    안주종류<br>
+    <select name="a2" id="">
+        <option value="제육볶음">제육볶음(8000원)</option>
+        <option value="두부김치">두부김치(10000원)</option>
+        <option value="골뱅무침">골뱅무침(7000원)</option>
+        <option value="김치파전">김치파전(5000원)</option>
+    </select>
+    </div>
+    <div class="a1">
+    갯수<br>
+    <input type="number" name="b2">
+    </div>
+    <div class="a1">
+    결제<br>
+        <select name="c1" id="">
+            <option value="카드">카드</option>
+            <option value="현금">현금(-10%할인)</option>
+        </select>
+    </div>
+</div>
+<input class="btn" type="button" onclick="mypass()" value="주문확인"><br>
+<textarea name="" id="area" cols="97" rows="10"></textarea>
+<div id="vv">
+</div>
+<div id="display"></div>
+</form>
+
+</div>
+</body>
+</html>

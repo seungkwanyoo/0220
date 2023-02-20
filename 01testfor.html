@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01testfor.html</title>
+<style>
+    * {
+        font-size: 20pt;
+    }
+</style>
+<script>
+    var su=0; //전역변수
+    var info='', data='', msg='', hap=0, ghap=0, total=0;
+    var cnt=0, count=0, k=0; //1 2 3 4 5 6 7 8 9 10 hap=55
+    function mynumber() {
+       
+        for(var k=1; k<11; k++) {
+            su++;
+            document.write(su,' ');
+            hap+=k;
+        }
+        document.write('합계:',hap);
+    }
+</script>
+</head>
+<body>
+    <h2>01testfor.html</h2>
+    <img src="./images/main_4.jpg" width="500" height="100"> <br>
+    <button onclick="mynumber();">for반복문</button>
+    <div id="display"></div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19testcal.html</title>
+    <script>
+        function mycal() {
+            var su=0, an=0, au1=0,sul=0, msg='',re='';
+           
+            
+            sul= document.myform.a1.value;
+            su= document.myform.b1.value;
+            an= document.myform.a2.value;
+            su1=document.myform.b2.value;
+
+
+
+            if (sul == "콜라" ){
+                price1 = 5000
+            } else if (sul == "소주"){
+                price1 = 3000
+            } else {
+                price1 = 2000
+            }
+            sultotal = price1 * su;
+
+            if (an == "제육볶음") {
+                price2 = 8800
+            } else if (an=="두부김치") {
+                price2 = 10000
+            } else if (an=="골뱅무침") {
+                price2 = 7000
+            } else {
+                price2 = 5000
+            }
+            antotal = price2 * su1;
+
+
+
+            // if(sul==5000) {msg='콜라'+sul*su+'원'}
+            // else if(sul==10000) {msg='콜라'+sul*su+'원'}
+            // else if(sul==15000) {msg='콜라'+sul*su+'원'}
+            // else if (sul==3000) {msg='소주'+sul*su+'원'} 
+            // else if (sul==6000) {msg='소주'+sul*su+'원'}
+            // else if (sul==9000) {msg='소주'+sul*su+'원'}
+            // else if (sul==2000) {msg='맥주'+sul*su+'원'}
+            // else if (sul==4000) {msg='맥주'+sul*su+'원'}
+            // else {msg='맥주'+sul*su+'원'}
+
+            // if (an==8800) {re='제육볶음'+an*su1+'원'}
+            // else if (an==17600) {re='제육볶음'+an*su1+'원'}
+            // else if (an==26400) {re='제육볶음'+an*su1+'원'}
+            // else if (an==10000) {re='두부김치'+an*su1+'원'}
+            // else if (an==20000) {re='두부김치'+an*su1+'원'}
+            // else if (an==30000) {re='두부김치'+an*su1+'원'}
+            // else if (an==7000) {re='골뱅무침'+an*su1+'원'}
+            // else if (an==14000) {re='골뱅무침'+an*su1+'원'}
+            // else if (an==21000) {re='골뱅무침'+an*su1+'원'}
+            // else if (an==5000) {re='김치파전'+an*su1+'원'}
+            // else if (an==10000) {re='김치파전'+an*su1+'원'}
+            // else {re='김치파전'+an*su1+'원'}
+            
+        
+            msg= '음료:'+sul+'        갯수:'+su+'               안주:'+an+'        갯수:'+su1+ '\n'+'합계:'+(sultotal + antotal);
+            document.getElementById('display').innerHTML = msg; 
+        }
+    </script>
+</head>
+<body>
+    <h1><font color="green">[주문표]</font></h1>
+    <form name="myform">
+        <table border="0">
+            <tr>
+                <td width="80">술종류</td>
+                <td width="50">갯수</td>
+                <td width="80">안주종류</td>
+                <td width="80">갯수</td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="a1" id="">
+                    <option value="콜라" id="">콜라(5000원)</option>
+                    <option value="소주" id="">소주(3000원)</option>
+                    <option value="맥주">맥주(2000원)</option>
+                </select>
+                </td>
+                <td>
+                    <input type="text" id="b1">
+                </td>
+                <td>
+                    <select name="a2" id="">
+                        <option value="제육볶음">제육볶음(8800원)</option>
+                        <option value="두부김치">두부김치(10000원)</option>
+                        <option value="골뱅무침">골뱅무침(7000원)</option>
+                        <option value="김치파전">김치파전(5000원)</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" id="b2">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4"><textarea name="" id="display" cols="90" rows="12"></textarea></td>
+            </tr>
+
+        </table>
+
+    </form>
+
+    <!-- 소주 3000원 맥주 2000원 콜라 5000원  -->
+    <!-- 제육볶음 8000원 두부김치 10000원 골뱅무침 7000원 김치파전 5000원 -->
+    <button type="sumit" onclick="mycal()">주문확인</button>
+    <div id="display"></div>
+</body>
+</html>
