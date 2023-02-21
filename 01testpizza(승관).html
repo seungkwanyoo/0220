@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01testpizza.html</title>
+    <style>
+      .relative {
+        background-image: url(images/bgpizza.jpg);
+        position: relative;
+        width: 427px;
+        height: 180px;
+        background-position: left;
+        margin: auto;
+      }
+      .absolute {
+        background-image: url(images/bgpizza.jpg);
+        position: absolute;
+        width: 235px;
+        height: 180px;
+        background-position: right;
+        right: 0;
+        margin: auto;
+      }
+       .aa {
+        margin-left: 200px;
+       }
+       .pizzabox {
+        border: 1px solid black;
+        width: 500px;
+        margin: auto;
+        background-color: rgb(233, 206, 205);
+       }
+       .box1 input {
+        margin-left: 5px;
+        margin-bottom: 5px;
+        padding-right: 30px;
+       }
+       ol {
+        list-style: none;
+        margin: 5px -40px;
+       }
+       li {
+        padding-bottom: 5px;
+       }
+       
+       .button1 {
+        border-radius: 5px;
+       }
+      .aa img {
+        margin-left: 550px;
+        margin-bottom: 10px;
+      }
+      .menu img {
+        width: 100px;
+      }
+      .m1 {
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+        ;
+      }
+      .table tr td {
+        border: 1px solid black;
+
+      }
+      .pizzabox2 img {
+        width: 150px;
+
+      }
+      .pizzabox2 td input {
+        margin-left: 20px;
+      }
+      .pizzabox2 {
+        width: 600px;
+        margin-left: 200px;
+      }
+      
+    </style>
+<script>
+  function changePizzaL(name) {
+    var filename = "url('pizza_images1/"+name+".png')"
+    preview_l.style.backgroundImage = filename;
+    
+  }
+  function changePizzaR(name) {
+    var filename = "url('pizza_images1/"+name+".png')"
+    preview_r.style.backgroundImage = filename;
+  }
+</script>
+</head>
+<body>
+<div class="aa"><img src="./pizza_images/logo10.png" alt=""></div>
+<div class="pizzabox">
+    <div class="box1">
+    고객명:
+    <input type="text"> <br>
+    전화번호:
+    <input type="tel"> <br>
+    E-mail:
+    <input type="email">
+    </div>
+    <fieldset>
+        <legend>피자사이즈</legend>
+        <ol>
+            <li><input type="radio">&nbsp;Small</li>
+            <li><input type="radio">&nbsp;Medium</li>
+            <li><input type="radio">&nbsp;Large</li>
+        </ol>
+    </fieldset>
+    <fieldset>
+        <legend>토핑선택</legend>
+        <ol>
+            <li><input type="checkbox">&nbsp;베이컨</li>
+            <li><input type="checkbox">&nbsp;치즈</li>
+            <li><input type="checkbox">&nbsp;양파</li>
+            <li><input type="checkbox">&nbsp;버섯</li>
+        </ol>
+    </fieldset>
+    <fieldset>
+      <legend>반반피자</legend>
+      <select name="" id="cz" onchange="changePizzaL(value)">
+        <option value="">--피자선택--</option>
+        <option value="1">토핑킹</option>
+        <option value="2">돈마호크</option>
+        <option value="3">수퍼수프림</option>
+        <option value="4">립스테이크</option>
+        <option value="5">직화불고기</option>
+        <option value="6">베이컨포테이토</option>
+        <option value="7">BBQ불고기</option>
+        <option value="8">알로하 하와이</option>
+        <option value="9">씬 돌아온 순삭포테이토</option>
+      </select>
+      <select name="" id="cz" onchange="changePizzaR(value)">
+        <option value="">--피자선택--</option>
+        <option value="1">토핑킹</option>
+        <option value="2">돈마호크</option>
+        <option value="3">수퍼수프림</option>
+        <option value="4">립스테이크</option>
+        <option value="5">직화불고기</option>
+        <option value="6">베이컨포테이토</option>
+        <option value="7">BBQ불고기</option>
+        <option value="8">알로하 하와이</option>
+        <option value="9">씬 돌아온 순삭포테이토</option>
+      </select>
+      <p></p>
+      <div id="preview_l" class="relative">
+        <div id="preview_r" class="absolute"></div>
+      </div>
+  </fieldset>
+    희망배송시간 <input type="time" min="10:00" max="22:00" step="900"> <p></p>
+    배송시요청사항: <textarea name="" id="" cols="20" rows="1" maxlength="100"></textarea> <p></p>
+    <input class="button1" type="button" value="주문하기">
+
+</div>
+<p></p>
+
+
+</body>
+</html>

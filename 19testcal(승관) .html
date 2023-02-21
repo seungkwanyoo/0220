@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>19testcal(승관).html</title>
     <style>
+        
+        .relative {
+            background-image: url('images/bgpizza.jpg');
+            position: relative;
+            width: 427px;
+            height: 180px;
+            background-position: left;
+            margin: auto;
+           
+        }
+        .absolute {
+            background-image: url('images/bgpizza.jpg');
+            position: absolute;
+            width: 235px;
+            height: 180px;
+            background-position: right;
+            right: 0;
+            margin: auto;
+            
+        }
         .member {
             display: flex;
             text-align: center;
@@ -38,6 +58,15 @@
         }
     </style>
     <script>
+        function changePizzaL(name) {
+            var filename="url('images/"+ name +".jpg')";
+            preview_l.style.backgroundImage = filename;
+        }
+
+        function changePizzaR(name) {
+            var filename="url('images/"+name+".jpg')";
+            preview_r.style.backgroundImage=filename;
+        }
         function mypass() {
             var soju=0, su1=0, su2=0, food=0,
                 price1=0, price2=0, msg='',
@@ -90,6 +119,10 @@
         }
     </script>
 </head>
+<p style="text-align: center;"><b>미스터음료 & 미스터안주피자</b></p>
+<div id="preview_l" class="relative">
+    <div id="preview_r" class="absolute"></div>
+</div>
 <body>
     <h3><font size="6pt" color="green">[주문표]</font></h3>
 <div class="cen">
@@ -97,7 +130,7 @@
 <div class="member">
     <div class="a1">
     술종류 <br>
-        <select name="a1" id="">
+        <select name="a1" onchange="changePizzaL(value)">
         <option value="콜라">콜라(5000원)</option>
         <option value="소주">소주(3000원)</option>
         <option value="맥주">맥주(2000원)</option>
@@ -110,7 +143,7 @@
     </div>
     <div class="a1">
     안주종류<br>
-    <select name="a2" id="">
+    <select name="a2" onchange="changePizzaR(value)">
         <option value="제육볶음">제육볶음(8000원)</option>
         <option value="두부김치">두부김치(10000원)</option>
         <option value="골뱅무침">골뱅무침(7000원)</option>
